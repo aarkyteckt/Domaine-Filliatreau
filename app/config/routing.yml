@@ -1,0 +1,4 @@
+domaine_filliatreau_presentation:
+    resource: "@DomaineFilliatreauPresentationBundle/Resources/config/routing.yml"
+    prefix:   /
+
