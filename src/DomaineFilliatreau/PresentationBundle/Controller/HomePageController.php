@@ -8,6 +8,6 @@ class HomePageController extends Controller
 {
     public function indexAction()
     {
-        return;
+        return $this->render('DomaineFilliatreauPresentationBundle:HomePage:index.html.twig');
     }
 }
