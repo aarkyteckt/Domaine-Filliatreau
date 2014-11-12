@@ -1,13 +1,101 @@
 <!DOCTYPE html>
+<!--
+	Domaine Filliatreau Corporate Website
+        by Alexandre Moufarek
+        aarkyteckt
+
+        Based on
+        Helios by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-    <head>
+    <head>        
         <meta charset="UTF-8" />
+        <meta name="description" content="" />
+	<meta name="keywords" content="" />
+
         <title>{% block title %}Domaine Filliatreau{% endblock %}</title>
-        {% block stylesheets %}<link href="{{ asset('css/style.css') }}" rel="stylesheet" />{% endblock %}
+        
+        {% block stylesheets %}
+
+            {# Use of Assetic to combine all CSS files and serve them as a single file for Front end optimization #}
+            {# All files are stored in /web/bundles/presentation #}
+            {% stylesheets 
+                'bundles/presentation/css/skel.css' 
+                'bundles/presentation/css/style.css' 
+                'bundles/presentation/css/style-noscript.css' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
+            {# IE 8 case management with specific CSS #}
+            <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+            
+        {% endblock %}
+                {% block javascripts %}
+            
+            {# Use of Assetic to combine all JS files and serve them as a single file for Front end optimization #}
+            {# All files are stored in /web/bundles/presentation #}
+            {% javascripts 
+                'bundles/presentation/js/jquery.min.js'
+                'bundles/presentation/js/jquery.dropotron.min.js'
+                'bundles/presentation/js/jquery.scrolly.min.js'
+                'bundles/presentation/js/jquery.onvisible.min.js'
+                'bundles/presentation/js/skel.min.js'
+                'bundles/presentation/js/skel-layers.min.js'
+                'bundles/presentation/js/init.js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            
+            {# IE 8 case management with specific JS #}
+            <!--[if lte IE 8]><link href="{{ asset('css/ie/html5shiv.js') }}" /><![endif]-->
+            
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block body %}BASE CONTENT{% endblock %}
-        {% block javascripts %}{% endblock %}
+    
+    <body class="homepage">
+        
+        {% block body %}
+            
+            <!-- Header -->
+                    <div id="header">
+
+                            <!-- Inner -->
+                                    <div class="inner">
+                                            <header>
+                                                    <h1><a href="index.html" id="logo">Domaine Filliatreau</a></h1>
+                                                    <hr />
+                                                    <p>Saumur Champigny</p>
+                                            </header>
+                                            <footer>
+                                                    <a href="#banner" class="button circled scrolly">D&eacute;couvrir</a>
+                                            </footer>
+                                    </div>
+
+                            <!-- Nav -->
+                                    <nav id="nav">
+                                            <ul>
+                                                    <li><a href="index.html">Le Domaine</a></li>
+                                                    <li>
+                                                            <a href="">La Grande Vignolle</a>
+                                                            <ul>
+                                                                    <li><a href="#">Lorem ipsum dolor</a></li>
+                                                                    <li><a href="#">Magna phasellus</a></li>
+                                                                    <li><a href="#">Etiam dolore nisl</a></li>
+                                                                    <li><a href="#">Veroeros feugiat</a></li>
+                                                            </ul>
+                                                    </li>
+                                                    <li><a href="left-sidebar.html">Nos cuv&eacute;es</a></li>
+                                                    <li><a href="http://www.filliatreau.fr/pages/acheter.php" target="_blank">Acheter en ligne</a></li>
+                                                    <li><a href="no-sidebar.html">Nous contacter</a></li>
+                                            </ul>
+                                    </nav>
+
+                    </div>
+
+        {% endblock %}
+        
+
     </body>
 </html>
