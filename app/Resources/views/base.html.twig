@@ -20,7 +20,10 @@
         {% block stylesheets %}
 
             {# Use of Assetic to combine all CSS files and serve them as a single file for Front end optimization #}
-            {# All files are stored in /web/bundles/presentation #}
+            {# All files are stored in /src/DomaineFilliatreau/PresentationBundle/Resources/public #}
+            {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
+            {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
+            
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
@@ -35,7 +38,10 @@
                 {% block javascripts %}
             
             {# Use of Assetic to combine all JS files and serve them as a single file for Front end optimization #}
-            {# All files are stored in /web/bundles/presentation #}
+            {# All files are stored in /src/DomaineFilliatreau/PresentationBundle/Resources/public #}
+            {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
+            {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
+            
             {% javascripts 
                 'bundles/domainefilliatreaupresentation/js/jquery.min.js'
                 'bundles/domainefilliatreaupresentation/js/jquery.dropotron.min.js'
