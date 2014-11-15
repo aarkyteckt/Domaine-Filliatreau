@@ -24,6 +24,11 @@
             {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
             
+             {% stylesheets 
+                'bundles/domainefilliatreaupresentation/css/font-awesome.min.css'  filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
