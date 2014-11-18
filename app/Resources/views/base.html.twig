@@ -23,7 +23,10 @@
             {# All files are stored in /src/DomaineFilliatreau/PresentationBundle/Resources/public #}
             {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
-            
+         
+            {# WORKAROUND: Fonts in prod don't work with assetic:dump because their referenced in css #}
+            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" />
+      
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
