@@ -29,6 +29,11 @@
 
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/font-awesome.min.css' 
+                filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
+            {% stylesheets  
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
                 'bundles/domainefilliatreaupresentation/css/style-normal.css' 
