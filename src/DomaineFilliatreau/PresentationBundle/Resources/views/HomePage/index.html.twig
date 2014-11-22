@@ -1,5 +1,54 @@
 {% extends 'DomaineFilliatreauPresentationBundle::layout.html.twig' %}
-{% block title %}{{ parent() }} - Index{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 {% block body %}
+    
     {{ parent() }}
+
+    {#
+    <!-- Banner -->
+            <section id="banner">
+                    <header>
+                            <p>
+                                
+                            </p>
+                    </header>
+            </section>
+    #}
+    
+    <!-- Features -->
+            <div class="wrapper style1">
+
+                    <section id="features" class="container special">
+                            <header>
+                                    <h2>Domaine Filliatreau</h2>
+                                    <p>
+                                        Histoire et Tradition de l'esprit "Saumur Champigny" depuis 1967
+                                    </p>
+                            </header>
+                            <div class="row">
+                                    <article class="6u special">
+                                            <a href="{#{{path('domaine')}}#}"><img class="image featured" src={{asset('bundles/domainefilliatreaupresentation/images/Domaine/pic01.jpg')}} alt="Domaine" /></a>
+                                            <header>
+                                                    <h3><a href="#">Le Domaine</a></h3>
+                                            </header>
+                                            <p>
+                                                Sur les plus grandes tables, le <strong>Domaine Filliatreau</strong> s'affirme
+                                                depuis une d&eacute;cennie comme une des figures du Val de Loire.
+                                            </p>
+                                    </article>
+                                    <article class="6u special">
+                                            <a href="{#{{path('vignolle')}}#}"><img class="image featured" src={{asset('bundles/domainefilliatreaupresentation/images/Grande%20Vignolle/pic01.jpg')}} alt="GrandeVignolle" /></a>
+                                            <header>
+                                                    <h3><a href="#">La Grande Vignolle</a></h3>
+                                            </header>
+                                            <p>
+                                                Nos vins sont propos&eacute;s au Domaine &agrave; Chaintres ainsi que dans le cadre
+                                                prestigieux du site touristique de la <strong>Grande Vignolle</strong>.
+                                            </p>
+                                    </article>
+                            </div>
+                    </section>
+                
+            </div>
+
 {% endblock %}

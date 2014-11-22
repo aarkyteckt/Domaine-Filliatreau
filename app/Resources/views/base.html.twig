@@ -30,6 +30,7 @@
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
+                'bundles/domainefilliatreaupresentation/css/style-normal.css' 
                 'bundles/domainefilliatreaupresentation/css/style-noscript.css' filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -78,7 +79,7 @@
                                                     <p>Saumur Champigny</p>
                                             </header>
                                             <footer>
-                                                    <a href="#banner" class="button circled scrolly">D&eacute;couvrir</a>
+                                                    <a href="#features" class="button circled scrolly">D&eacute;couvrir</a>
                                             </footer>
                                     </div>
 
@@ -105,6 +106,53 @@
 
         {% endblock %}
         
+        
+        {% block footer %}
+            <!-- Footer -->
+                    <div id="footer">
+                            <div class="container">
+                                    <div class="row">
+                                            <div class="12u">
+
+                                                    <!-- Contact -->
+                                                            <section class="contact">
+                                                                    <header>
+                                                                            <h2>Contact</h2>
+                                                                    </header>
+                                                                    <p>
+                                                                        C'est &agrave; 6 kms de Saumur, dans le village de Chaintres, au coeur du vignoble</br>
+                                                                        "Saumur-Champigny", que se trouve le Domaine Filliatreau
+
+                                                                        <p>
+                                                                            Chaintres - 49400 Saumur</br>
+                                                                            Tel : 02 41 52 90 84 - Fax : 02 41 52 49 92</br>
+                                                                            <a href="mailto:domaine@filliatreau.fr">domaine@filliatreau.fr</a></br>
+                                                                        </p>
+                                                                    </p>
+                                                                    <ul class="icons">
+                                                                            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                                                            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                                                            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                                                            <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                                                            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                                                            <li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+                                                                    </ul>
+                                                            </section>
+
+                                                    <!-- Copyright -->
+                                                            <div class="copyright">
+                                                                    <ul class="menu">
+                                                                            <li>&copy; Domaine Filliatreau. All rights reserved.</li>
+                                                                    </ul>
+                                                            </div>
+
+                                            </div>
+
+                                    </div>
+                            </div>
+                    </div>
+
+        {% endblock %}
 
     </body>
 </html>
