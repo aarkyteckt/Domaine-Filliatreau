@@ -25,14 +25,8 @@
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
          
             {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
-            {# <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" /> #}
+            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" />
 
-            {% stylesheets 
-                'bundles/domainefilliatreaupresentation/css/font-awesome.min.css' 
-                filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
-            {% endstylesheets %}
-            
             {% stylesheets  
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
