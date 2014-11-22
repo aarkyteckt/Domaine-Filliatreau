@@ -25,14 +25,14 @@
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
          
             {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
-            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" />
-      
-            {% stylesheets 
-                'bundles/domainefilliatreaupresentation/css/skel.css' 
-                'bundles/domainefilliatreaupresentation/css/style.css' 
-                'bundles/domainefilliatreaupresentation/css/style-noscript.css' filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
-            {% endstylesheets %}
+            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/font-awesome.min.css' ) }}" rel="stylesheet" /> 
+            <link rel="stylesheet" href="{{ asset('bundles/domainefilliatreaupresentation/css/skel.css') }}" type="text/css" />
+                <link rel="stylesheet" href="{{ asset('bundles/domainefilliatreaupresentation/css/style.css') }}" type="text/css" />
+                <link rel="stylesheet" href="{{ asset('bundles/domainefilliatreaupresentation/css/style-noscript.css') }}" type="text/css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+            
+
+
             
             {# IE 8 case management with specific CSS #}
             <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
