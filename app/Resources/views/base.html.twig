@@ -25,7 +25,7 @@
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
          
             {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
-            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" /> 
+            {# <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" /> #}
 
             {% stylesheets 
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
@@ -86,9 +86,9 @@
                             <!-- Nav -->
                                     <nav id="nav">
                                             <ul>
-                                                    <li><a href="index.html">Le Domaine</a></li>
+                                                    <li><a href="#domaine">Le Domaine</a></li>
                                                     <li>
-                                                            <a href="">La Grande Vignolle</a>
+                                                            <a href="#vignolle">La Grande Vignolle</a>
                                                             <ul>
                                                                     <li><a href="#">Lorem ipsum dolor</a></li>
                                                                     <li><a href="#">Magna phasellus</a></li>
@@ -98,7 +98,7 @@
                                                     </li>
                                                     <li><a href="left-sidebar.html">Nos cuv&eacute;es</a></li>
                                                     <li><a href="http://www.filliatreau.fr/pages/acheter.php" target="_blank">Acheter en ligne</a></li>
-                                                    <li><a href="no-sidebar.html">Nous contacter</a></li>
+                                                    <li><a href="#contact">Nous contacter</a></li>
                                             </ul>
                                     </nav>
 
@@ -117,7 +117,7 @@
                                                     <!-- Contact -->
                                                             <section class="contact">
                                                                     <header>
-                                                                            <h2>Contact</h2>
+                                                                            <h2>Nous Contacter</h2>
                                                                     </header>
                                                                     <p>
                                                                         C'est &agrave; 6 kms de Saumur, dans le village de Chaintres, au coeur du vignoble</br>
