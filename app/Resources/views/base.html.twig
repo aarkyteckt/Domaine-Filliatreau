@@ -18,20 +18,21 @@
         <title>{% block title %}Domaine Filliatreau{% endblock %}</title>
         
         {% block stylesheets %}
+            
+            {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
+            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" />
 
             {# Use of Assetic to combine all CSS files and serve them as a single file for Front end optimization #}
             {# All files are stored in /src/DomaineFilliatreau/PresentationBundle/Resources/public #}
             {# assets:install command copies all /Resources/public from all bundles to /web/bundles/<bundleName> #}
             {# All files are copied to /web/bundles/domainefilliatreaupresentation #}
-         
-            {# WORKAROUND: Fonts in prod don't work with assetic:dump because they're referenced in css #}
-            <link href="{{ asset( 'bundles/domainefilliatreaupresentation/css/style.css' ) }}" rel="stylesheet" />
 
-            {% stylesheets  
+            {% stylesheets   
                 'bundles/domainefilliatreaupresentation/css/skel.css' 
                 'bundles/domainefilliatreaupresentation/css/style.css' 
                 'bundles/domainefilliatreaupresentation/css/style-normal.css' 
-                'bundles/domainefilliatreaupresentation/css/style-noscript.css' filter='cssrewrite' %}
+                'bundles/domainefilliatreaupresentation/css/style-noscript.css' 
+                'bundles/domainefilliatreaupresentation/css/sfx.css' filter='cssrewrite' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
 
@@ -39,7 +40,7 @@
             <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
             
         {% endblock %}
-                {% block javascripts %}
+        {% block javascripts %}
             
             {# Use of Assetic to combine all JS files and serve them as a single file for Front end optimization #}
             {# All files are stored in /src/DomaineFilliatreau/PresentationBundle/Resources/public #}
@@ -53,12 +54,16 @@
                 'bundles/domainefilliatreaupresentation/js/jquery.onvisible.min.js'
                 'bundles/domainefilliatreaupresentation/js/skel.min.js'
                 'bundles/domainefilliatreaupresentation/js/skel-layers.min.js'
-                'bundles/domainefilliatreaupresentation/js/init.js' %}
+                'bundles/domainefilliatreaupresentation/js/init.js' 
+                'bundles/domainefilliatreaupresentation/js/sfx.js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
             
             {# IE 8 case management with specific JS #}
             <!--[if lte IE 8]><link href="{{ asset('css/ie/html5shiv.js') }}" /><![endif]-->
+            
+            
+                     
             
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -103,7 +108,9 @@
                                     </nav>
 
                     </div>
-
+            
+            
+            <a href="#" class="scrollup" style="display: none;">Scroll</a>
         {% endblock %}
         
         
@@ -155,4 +162,6 @@
         {% endblock %}
 
     </body>
+
 </html>
+
