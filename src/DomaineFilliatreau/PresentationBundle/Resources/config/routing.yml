@@ -1,3 +1,7 @@
-domaine_filliatreau_presentation_homepage:
+homepage:
     path:     /
     defaults: { _controller: DomaineFilliatreauPresentationBundle:HomePage:index }
+    
+cuvees:
+    path:     /cuvees
+    defaults: { _controller: DomaineFilliatreauPresentationBundle:Catalogue:catalogue }

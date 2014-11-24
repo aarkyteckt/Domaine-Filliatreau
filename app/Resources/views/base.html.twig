@@ -62,17 +62,19 @@
             {# IE 8 case management with specific JS #}
             <!--[if lte IE 8]><link href="{{ asset('css/ie/html5shiv.js') }}" /><![endif]-->
             
-            
-                     
-            
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     
+    {# Putting the <body> opening tag in a specific block allows to switch the body class depending on the page #}
+    {# Each body class changes the header design #}
+    
+    {% block bodyClass %}
     <body class="homepage">
+    {% endblock %}
         
         {% block body %}
-            
+  
             <!-- Header -->
                     <div id="header">
 
@@ -91,9 +93,9 @@
                             <!-- Nav -->
                                     <nav id="nav">
                                             <ul>
-                                                    <li><a href="#domaine">Le Domaine</a></li>
+                                                    <li><a href="#domaine" class="scrolly">Le Domaine</a></li>
                                                     <li>
-                                                            <a href="#vignolle">La Grande Vignolle</a>
+                                                            <a href="#vignolle" class="scrolly">La Grande Vignolle</a>
                                                             <ul>
                                                                     <li><a href="#">Lorem ipsum dolor</a></li>
                                                                     <li><a href="#">Magna phasellus</a></li>
@@ -101,9 +103,9 @@
                                                                     <li><a href="#">Veroeros feugiat</a></li>
                                                             </ul>
                                                     </li>
-                                                    <li><a href="">Nos cuv&eacute;es</a></li>
+                                                    <li><a href="{{path('cuvees')}}">Nos cuv&eacute;es</a></li>
                                                     <li><a href="http://www.filliatreau.fr/pages/acheter.php" target="_blank">Acheter en ligne</a></li>
-                                                    <li><a href="#footer">Nous contacter</a></li>
+                                                    <li><a href="#footer" class="scrolly">Nous contacter</a></li>
                                             </ul>
                                     </nav>
 
@@ -112,7 +114,6 @@
             
             <a href="#" class="scrollup" style="display: none;">Scroll</a>
         {% endblock %}
-        
         
         {% block footer %}
             <!-- Footer -->
@@ -140,8 +141,6 @@
                                                                             <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                                                                             <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                                                                             <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                                                                            <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-                                                                            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
                                                                             <li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
                                                                     </ul>
                                                             </section>
@@ -164,4 +163,3 @@
     </body>
 
 </html>
-
