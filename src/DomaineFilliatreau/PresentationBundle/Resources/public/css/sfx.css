@@ -15,5 +15,6 @@
             right:50px;
             display:none;
             text-indent:-9999px;
+            z-index: 1; /*layer ordering*/
             background: url('../images/icon_top.png') no-repeat;
         }
