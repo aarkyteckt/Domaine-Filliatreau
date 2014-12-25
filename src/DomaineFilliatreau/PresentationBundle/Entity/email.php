@@ -41,6 +41,13 @@ class email
      * @ORM\Column(name="emailAddress", type="string", length=255)
      */
     private $emailAddress;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
 
     /**
      * @var string
@@ -129,6 +136,29 @@ class email
         return $this->emailAddress;
     }
 
+        /**
+     * Set title
+     *
+     * @param string $title
+     * @return email
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    
     /**
      * Set content
      *
