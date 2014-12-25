@@ -81,6 +81,11 @@
                             <!-- Inner -->
                                     <div class="inner">
                                             <header>
+                                                {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                                            <h2>{{ flashMessage }}</h2>
+
+                                        {% endfor %}
                                                     <h1><a href="" id="logo">Domaine Filliatreau</a></h1>
                                                     <hr />
                                                     <p>Saumur Champigny</p>

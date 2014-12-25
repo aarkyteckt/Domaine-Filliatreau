@@ -26,12 +26,11 @@ class HomePageController extends Controller
         ->setSubject($email->getTitle())
         ->setFrom($email->getEmailAddress())
         ->setTo('domainefilliatreau@gmail.com')
-        ->setBody($email->getContent())
-    ;
-    $this->get('mailer')->send($message);
+        ->setBody($email->getContent());
+    
+        $this->get('mailer')->send($message);
 
-            $request->getSession()->getFlashBag()->add('notice', 'Votre message a bien été envoyé');
-
+        $request->getSession()->getFlashBag()->add('notice', 'Merci pour votre message');
         // On redirige vers la page de visualisation de l'annonce nouvellement créée
             //return $this->redirect($this->generateUrl('oc_platform_view', array('id' => $advert->getId())));
        } 
