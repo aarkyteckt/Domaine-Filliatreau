@@ -20,7 +20,7 @@ class emailType extends AbstractType
             ->add('emailAddress',    'text')
             ->add('title',           'text')
             ->add('content',         'textarea')
-            ->add('save',      'submit')
+            ->add('envoyer',      'submit')
         ;
     }
     

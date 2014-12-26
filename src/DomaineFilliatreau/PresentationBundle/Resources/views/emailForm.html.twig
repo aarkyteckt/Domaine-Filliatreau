@@ -5,75 +5,60 @@
     {{ form_errors(form) }}
     
     <div class="form-group form-group-sm">
-      {# Génération du label. #}
-      {{ form_label(form.firstName, "Prenom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
-
       {# Affichage des erreurs pour ce champ précis. #}
       {{ form_errors(form.firstName) }}
 
       <div class="col-sm-4">
         {# Génération de l'input. #}
-        {{ form_widget(form.firstName, {'attr': {'class': 'form-control input-sm'}}) }}
+        {{ form_widget(form.firstName, {'attr': {'class': 'form-control input-sm', 'placeholder': 'Prenom'}}) }}
       </div>
     </div>
     
     <div class="form-group">
-      {# Génération du label. #}
-      {{ form_label(form.lastName, "Nom", {'label_attr': {'class': 'col-sm-1 control-label'}}) }}
-
       {# Affichage des erreurs pour ce champ précis. #}
       {{ form_errors(form.lastName) }}
 
       <div class="col-sm-4">
         {# Génération de l'input. #}
-        {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
       </div>
     </div>
 
       
       
     <div class="form-group">
-      {# Génération du label. #}
-      {{ form_label(form.emailAddress, "Adresse", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-
       {# Affichage des erreurs pour ce champ précis. #}
       {{ form_errors(form.emailAddress) }}
 
       <div class="col-sm-4">
         {# Génération de l'input. #}
-        {{ form_widget(form.emailAddress, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.emailAddress, {'attr': {'class': 'form-control', 'placeholder': 'Adresse email'}}) }}
       </div>
     </div>
       
     <div class="form-group">
-      {# Génération du label. #}
-      {{ form_label(form.title, "Sujet", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-
       {# Affichage des erreurs pour ce champ précis. #}
       {{ form_errors(form.title) }}
 
       <div class="col-sm-4">
         {# Génération de l'input. #}
-        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder': 'Sujet'}}) }}
       </div>
     </div>
       
     <div class="form-group">
-      {# Génération du label. #}
-      {{ form_label(form.content, "", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-
       {# Affichage des erreurs pour ce champ précis. #}
       {{ form_errors(form.content) }}
 
       <div class="col-sm-4">
         {# Génération de l'input. #}
-        {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.content, {'attr': {'class': 'form-control', 'placeholder': 'Votre message ici'}}) }}
       </div>
     </div>
       
       
   {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-  {{ form_widget(form.save, {'attr': {'class': 'button circled scrolly'}}) }}
+  {{ form_widget(form.envoyer, {'attr': {'class': 'button circled scrolly'}}) }}
   
   {{ form_rest(form) }}
   
