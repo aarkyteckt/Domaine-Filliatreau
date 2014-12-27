@@ -5,3 +5,7 @@ homepage:
 cuvees:
     path:     /cuvees
     defaults: { _controller: DomaineFilliatreauPresentationBundle:Catalogue:catalogue }
+
+contact:
+    path:     /contact
+    defaults: { _controller: DomaineFilliatreauPresentationBundle:Contact:contact }
