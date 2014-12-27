@@ -1,5 +1,5 @@
 
-  {{ form_start(form, {'attr': {'class': 'form-inline'}}) }}
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
     {# Les erreurs générales du formulaire. #}
     {{ form_errors(form) }}
@@ -54,9 +54,10 @@
       </div>
     </div>
       
-      
+  <footer>
   {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
   {{ form_widget(form.envoyer, {'attr': {'class': 'button circled scrolly'}}) }}
+  </footer>
   
   {{ form_rest(form) }}
   

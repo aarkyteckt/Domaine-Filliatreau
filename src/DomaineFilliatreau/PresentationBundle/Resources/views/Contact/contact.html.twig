@@ -29,11 +29,31 @@
 
   
     <!-- Main -->
-                    <div class="wrapper style1">
+    
+     <div class="wrapper style1">
 
-                                                <!-- Email form !-->
-                                                {% include 'DomaineFilliatreauPresentationBundle::emailForm.html.twig' %}
-                                                
+            <div class="row">                
+                <article class="8u special">
 
-                    </div>
+                    <h3>Nous &eacute;crire</h3></br>             
+
+                    {% for flashMessage in app.session.flashbag.get('notice') %}
+                            <h2>{{ flashMessage }}</h2>
+                        {% endfor %}
+                        
+
+                        <!-- Email form !-->
+                        {% include 'DomaineFilliatreauPresentationBundle::emailForm.html.twig' %}
+                </article>
+                <article class="4u special">
+                    <h3>Coordonn&eacute;es</h3></br>
+                        <p>
+                            Chaintres - 49400 Saumur</br>
+                            Tel : 02 41 52 90 84 - Fax : 02 41 52 49 92</br>
+                            <a href="mailto:domaine@filliatreau.fr">domaine@filliatreau.fr</a></br>
+                        </p>
+                </article>
+            </div>
+                       
+     </div>
 {% endblock %}

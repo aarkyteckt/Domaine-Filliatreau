@@ -37,7 +37,7 @@ class ContactController extends Controller
         
         $this->get('mailer')->send($message);
 
-        $request->getSession()->getFlashBag()->add('notice', 'Merci pour votre message');
+        $request->getSession()->getFlashBag()->add('notice', 'Votre message a bien ete envoye');
 
         // On redirige vers la page de visualisation de l'annonce nouvellement créée
             //return $this->redirect($this->generateUrl('oc_platform_view', array('id' => $advert->getId())));
