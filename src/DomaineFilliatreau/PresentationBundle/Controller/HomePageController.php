@@ -21,20 +21,27 @@ class HomePageController extends Controller
        
        // Check data validity
        if ($form->isValid())
-       {         
+       {                    
+        //Concatenation of email form fields to be sent as email body
+        $content = "Nom : ".$email->getFirstName()."   Prenom : ".$email->getLastName().
+                    "\r\n"."Adresse email : ".$email->getEmailAddress().
+                    "\r\n\r\n"."Message : \r\n".$email->getContent();
+                
+        //Requiered for email to be sent
+        //GMail overrides setFrom()
         $message = \Swift_Message::newInstance()
         ->setSubject($email->getTitle())
         ->setFrom($email->getEmailAddress())
         ->setTo('domainefilliatreau@gmail.com')
-        ->setBody($email->getContent());
-    
+        ->setBody($content);
+        
         $this->get('mailer')->send($message);
 
         $request->getSession()->getFlashBag()->add('notice', 'Merci pour votre message');
+
         // On redirige vers la page de visualisation de l'annonce nouvellement créée
             //return $this->redirect($this->generateUrl('oc_platform_view', array('id' => $advert->getId())));
        } 
-       
         return $this->render('DomaineFilliatreauPresentationBundle:HomePage:index.html.twig',
                 array('form' => $form->createView()
                 ));

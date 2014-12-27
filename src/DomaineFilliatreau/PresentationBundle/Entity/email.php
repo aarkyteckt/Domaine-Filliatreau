@@ -2,6 +2,7 @@
 
 namespace DomaineFilliatreau\PresentationBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,8 +24,14 @@ class email
 
     /**
      * @var string
-     *
      * @ORM\Column(name="firstName", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 20,
+     *      minMessage = "Merci d'entrer au moins {{ limit }} lettres",
+     *      maxMessage = "Merci d'entrer moins de {{ limit }} lettres"
+     * )
      */
     private $firstName;
 
@@ -32,6 +39,14 @@ class email
      * @var string
      *
      * @ORM\Column(name="lastName", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 20,
+     *      minMessage = "Merci d'entrer au moins {{ limit }} lettres",
+     *      maxMessage = "Merci d'entrer moins de {{ limit }} lettres"
+     * )
      */
     private $lastName;
 
@@ -39,6 +54,11 @@ class email
      * @var string
      *
      * @ORM\Column(name="emailAddress", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "Merci d'entrer une adresse email valide"
+     * )
      */
     private $emailAddress;
     
@@ -46,6 +66,8 @@ class email
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * 
+     * @Assert\NotBlank()
      */
     private $title;
 
@@ -53,6 +75,8 @@ class email
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * 
+     * @Assert\NotBlank()
      */
     private $content;
 
