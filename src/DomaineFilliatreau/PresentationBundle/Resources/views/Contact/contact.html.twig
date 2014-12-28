@@ -37,11 +37,10 @@
 
                     <h3>Nous &eacute;crire</h3></br>             
 
-                    {% for flashMessage in app.session.flashbag.get('notice') %}
-                            <h2>{{ flashMessage }}</h2>
+                        {% for flashMessage in app.session.flashbag.get('notice') %}
+                            <h3><i>{{ flashMessage }}</i></h3>
                         {% endfor %}
                         
-
                         <!-- Email form !-->
                         {% include 'DomaineFilliatreauPresentationBundle::emailForm.html.twig' %}
                 </article>
